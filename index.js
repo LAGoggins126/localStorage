@@ -1,3 +1,4 @@
+//This exercies will show you how to use setItem, getItem, and removeItem, with other aspects of JS.
 //STEP 1: Open the index in your web browser
 //STEP 2: Add text in the first input and click submit
 //STEP 3: Open your web dev tools and go to application
