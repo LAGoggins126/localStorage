@@ -13,9 +13,9 @@
 //define output1 as a global variable
 let output1 = document.querySelector('#output1')
 //define output2 as a global variable
-
+let output2 = document.querySelector('#output2')
 //define output3 as a global variable
-
+let output3 = document.querySelector('#output3')
 //code for first input
 //input should display in output1 <p> once submit is clicked
 //output 1 and local storage should clear when 
@@ -35,12 +35,28 @@ document.addEventListener('DOMContentLoaded', function () {
 
 //do the same for the second input
 document.addEventListener('DOMContentLoaded', function () {
-            
+        document.querySelector('#btn2').addEventListener('click', function (){
+            let input2 = document.querySelector('#input2').value;
+            console.log(input2);
+            document.querySelector('#secondDiv').style.display= 'none';
+            localStorage.setItem('activity', input2);
+            let output2Text = localStorage.getItem('activity');
+
+            output2.innerHTML = output2Text;
+        });       
     });
 
 //do the same for the third input
 document.addEventListener('DOMContentLoaded', function () {
+        document.querySelector('#btn3').addEventListener('click', function(){
+            let input3 = document.querySelector('#input3').value;
+            console.log(input3);
+            document.querySelector('#thirdDiv').style.display = 'none';
+            localStorage.setItem('activity', input3);
+            let output3Text = localStorage.getItem('activity');
 
+            output3.innerHTML = output3Text;
+        })
  });
  
 
@@ -53,8 +69,12 @@ document.addEventListener('DOMContentLoaded', function () {
         output1.innerHTML = "";
 
         //remove item from 2nd local storage key
-
+        localStorage.removeItem('activity');
+        document.querySelector('#secondDiv').style.display = 'block';
+        output2.innerHTML = "";
         //remove item from 3rd local storage key
-
+        localStorage.removeItem('activity');
+        document.querySelector('#thirdDiv').style.display = 'block';
+        output3.innerHTML = "";
     })
 });
